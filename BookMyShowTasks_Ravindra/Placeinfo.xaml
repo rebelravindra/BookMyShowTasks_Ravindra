@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="BookMyShowTasks_Ravindra.Placeinfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BookMyShowTasks_Ravindra"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock FontSize="30" x:Name="nameblk" HorizontalAlignment="Left" Margin="185,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock FontSize="20" x:Name="addressblk" HorizontalAlignment="Left" Margin="185,106,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <Image x:Name="img" HorizontalAlignment="Left" Height="129" Margin="10,38,0,0" VerticalAlignment="Top" Width="140"/>
+        <AppBarButton x:Name="favbutton" HorizontalAlignment="Left" Icon="Favorite" Label="Add to Favorites" Margin="181,209,0,0" VerticalAlignment="Top" Click="favbutton_Click" Height="71" Width="86"/>
+        <GridView x:Name="favoritesview" HorizontalAlignment="Left" Height="180" Margin="27,332,0,0" VerticalAlignment="Top" Width="189">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock FontSize="25" Text="{Binding Path=Name}"></TextBlock>
+                        <TextBlock FontSize="20" Text="{Binding Path=Address}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="viewfavs" Label="View favorites" Icon="SolidStar" Click="viewfavs_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
